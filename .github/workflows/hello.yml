@@ -1,0 +1,17 @@
+name: hello
+
+on:
+  push: ~
+
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run composite action
+      uses: ./.github/workflows/my-example-action
+      with:
+        name: tux

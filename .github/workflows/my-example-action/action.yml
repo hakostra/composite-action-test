@@ -1,0 +1,16 @@
+name: my-example-action
+description: Debugging
+
+inputs:
+  name:
+    description: Some input
+    required: true
+    default: ''
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print diagnostic
+      shell: bash
+      run: |
+        echo "${{ inputs.name }}"
